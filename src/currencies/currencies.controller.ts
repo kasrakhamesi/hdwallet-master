@@ -7,27 +7,32 @@ import {
   Param,
   Delete
 } from '@nestjs/common'
+import { ApiTags } from '@nestjs/swagger'
 import { CurrenciesService } from './currencies.service'
 import { CreateCurrencyDto } from './dto/create-currency.dto'
 import { UpdateCurrencyDto } from './dto/update-currency.dto'
 
+@ApiTags('Currencies')
 @Controller('currencies')
 export class CurrenciesController {
   constructor(private readonly currenciesService: CurrenciesService) {}
 
   @Post()
   create(@Body() createCurrencyDto: CreateCurrencyDto) {
-    return this.currenciesService.create(createCurrencyDto)
+    return {
+      statusCode: 201,
+      data: this.currenciesService.create(createCurrencyDto)
+    }
   }
 
   @Get()
   findAll() {
-    return this.currenciesService.findAll()
+    return { statusCode: 200, data: this.currenciesService.findAll() }
   }
 
   @Get('id/:id')
   findOne(@Param('id') id: string) {
-    return this.currenciesService.findOne(+id)
+    return { statusCode: 200, data: this.currenciesService.findOne(+id) }
   }
 
   @Patch('id/:id')
@@ -35,11 +40,14 @@ export class CurrenciesController {
     @Param('id') id: string,
     @Body() updateCurrencyDto: UpdateCurrencyDto
   ) {
-    return this.currenciesService.update(+id, updateCurrencyDto)
+    return {
+      statusCode: 200,
+      data: this.currenciesService.update(+id, updateCurrencyDto)
+    }
   }
 
   @Delete('id/:id')
   remove(@Param('id') id: string) {
-    return this.currenciesService.remove(+id)
+    return { statusCode: 200, data: this.currenciesService.remove(+id) }
   }
 }

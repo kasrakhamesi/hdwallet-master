@@ -1,10 +1,11 @@
-import { Table, Column, Model } from 'sequelize-typescript'
+import { Table, Column, Unique, Model } from 'sequelize-typescript'
 import { DataTypes } from 'sequelize'
 
 @Table({
   modelName: 'currencies'
 })
 export class Currencies extends Model {
+  @Unique
   @Column({
     type: DataTypes.BIGINT.UNSIGNED,
     primaryKey: true,
@@ -45,7 +46,7 @@ export class Currencies extends Model {
   @Column({
     allowNull: false
   })
-  decimal: number
+  decimals: number
 
   @Column
   icon: string

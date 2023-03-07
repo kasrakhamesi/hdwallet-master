@@ -11,7 +11,8 @@ export class CurrenciesService {
   ) {}
 
   create(createCurrencyDto: CreateCurrencyDto) {
-    return this.currenciesRepository.create(createCurrencyDto)
+    const data: any = createCurrencyDto
+    return this.currenciesRepository.create(data)
   }
 
   findAll() {
