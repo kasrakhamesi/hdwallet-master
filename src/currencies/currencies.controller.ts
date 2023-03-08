@@ -19,20 +19,17 @@ export class CurrenciesController {
 
   @Post()
   create(@Body() createCurrencyDto: CreateCurrencyDto) {
-    return {
-      statusCode: 201,
-      data: this.currenciesService.create(createCurrencyDto)
-    }
+    return this.currenciesService.create(createCurrencyDto)
   }
 
   @Get()
   findAll() {
-    return { statusCode: 200, data: this.currenciesService.findAll() }
+    return this.currenciesService.findAll()
   }
 
   @Get('id/:id')
   findOne(@Param('id') id: string) {
-    return { statusCode: 200, data: this.currenciesService.findOne(+id) }
+    return this.currenciesService.findOne(+id)
   }
 
   @Patch('id/:id')
@@ -40,14 +37,11 @@ export class CurrenciesController {
     @Param('id') id: string,
     @Body() updateCurrencyDto: UpdateCurrencyDto
   ) {
-    return {
-      statusCode: 200,
-      data: this.currenciesService.update(+id, updateCurrencyDto)
-    }
+    return this.currenciesService.update(+id, updateCurrencyDto)
   }
 
   @Delete('id/:id')
   remove(@Param('id') id: string) {
-    return { statusCode: 200, data: this.currenciesService.remove(+id) }
+    return this.currenciesService.remove(+id)
   }
 }

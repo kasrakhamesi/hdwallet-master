@@ -763,6 +763,16 @@
     iterare "1.2.1"
     tslib "2.5.0"
 
+"@nestjs/config@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@nestjs/config/-/config-2.3.1.tgz#6ac151f818db4ccf987c7ff8ef5b2c1f4eeec913"
+  integrity sha512-Ckzel0NZ9CWhNsLfE1hxfDuxJuEbhQvGxSlmZ1/X8awjRmAA/g3kT6M1+MO1SHj1wMtPyUfd9WpwkiqFbiwQgA==
+  dependencies:
+    dotenv "16.0.3"
+    dotenv-expand "10.0.0"
+    lodash "4.17.21"
+    uuid "9.0.0"
+
 "@nestjs/core@^9.0.0":
   version "9.3.9"
   resolved "https://registry.npmjs.org/@nestjs/core/-/core-9.3.9.tgz"
@@ -814,6 +824,13 @@
     fs-extra "11.1.0"
     jsonc-parser "3.2.0"
     pluralize "8.0.0"
+
+"@nestjs/sequelize@^9.0.0":
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/sequelize/-/sequelize-9.0.0.tgz#30946ea0f1108eccfb418154755a3621069ce5e8"
+  integrity sha512-8HwEcDuUka5sGR4eIv98tEWRTzNI87KGkoHLbmFx9rk1/OB3nF2gqvtLzU7WMLdgan0mNQdDzeBoVwAmedMEtQ==
+  dependencies:
+    uuid "8.3.2"
 
 "@nestjs/swagger@^6.2.1":
   version "6.2.1"
@@ -1560,6 +1577,15 @@ avvio@^8.2.0:
     debug "^4.0.0"
     fastq "^1.6.1"
 
+axios@^1.3.4:
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.3.4.tgz#f5760cefd9cfb51fd2481acf88c05f67c4523024"
+  integrity sha512-toYm+Bsyl6VC5wSkfkbbNB6ROv7KY93PEBBL6xyDczaIHasAiv4wPqQ/c4RjoQzipxRD2W5g21cOqQulZ7rHwQ==
+  dependencies:
+    follow-redirects "^1.15.0"
+    form-data "^4.0.0"
+    proxy-from-env "^1.1.0"
+
 babel-jest@^29.5.0:
   version "29.5.0"
   resolved "https://registry.npmjs.org/babel-jest/-/babel-jest-29.5.0.tgz"
@@ -2125,6 +2151,16 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
+dotenv-expand@10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv-expand/-/dotenv-expand-10.0.0.tgz#12605d00fb0af6d0a592e6558585784032e4ef37"
+  integrity sha512-GopVGCpVS1UKH75VKHGuQFqS1Gusej0z4FyQkPdwjil2gNIv+LNsqBlboOzpJFZKVT95GkCyWJbBSdFEFUWI2A==
+
+dotenv@16.0.3:
+  version "16.0.3"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.0.3.tgz#115aec42bac5053db3c456db30cc243a5a836a07"
+  integrity sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==
+
 dottie@^2.0.2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/dottie/-/dottie-2.0.3.tgz#797a4f4c92a9a65499806be4051b9d9dcd5a5d77"
@@ -2635,6 +2671,11 @@ flatted@^3.1.0:
   resolved "https://registry.npmjs.org/flatted/-/flatted-3.2.7.tgz"
   integrity sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==
 
+follow-redirects@^1.15.0:
+  version "1.15.2"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.2.tgz#b460864144ba63f2681096f274c4e57026da2c13"
+  integrity sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==
+
 fork-ts-checker-webpack-plugin@7.3.0:
   version "7.3.0"
   resolved "https://registry.npmjs.org/fork-ts-checker-webpack-plugin/-/fork-ts-checker-webpack-plugin-7.3.0.tgz"
@@ -2661,6 +2702,13 @@ form-data@^4.0.0:
     asynckit "^0.4.0"
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
+
+format-fast@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/format-fast/-/format-fast-1.0.2.tgz#85402b3f8c3f4980602382aef96e7d362cd0744e"
+  integrity sha512-Ywf8+KIfPlM/cB8gWHMyx6MMhmTZtfwn3WJpXy3L84FrXJKGZMT8rjAj25NrGj34X8pAbFpNzTGyI3YIQJ+ZXg==
+  dependencies:
+    is-all-utils "^1.0.6"
 
 formidable@^2.1.2:
   version "2.1.2"
@@ -3005,6 +3053,11 @@ ipaddr.js@1.9.1:
   version "1.9.1"
   resolved "https://registry.npmjs.org/ipaddr.js/-/ipaddr.js-1.9.1.tgz"
   integrity sha512-0KI/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh/hZykN8KpmMf7uYwPW3R+akZ6R/w18ZlXSHBYXiYUPO3g==
+
+is-all-utils@^1.0.3, is-all-utils@^1.0.6:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/is-all-utils/-/is-all-utils-1.0.7.tgz#c3d96e462541523855f1346321d6b5738644675c"
+  integrity sha512-URcVdNTd0hBKe8PapjRWbkqqIapV2WohKDnldOIM+ajpfRqGsfIY/4TCSZAsoIegtl0mU6XN1BO5hHC0Y1eK4A==
 
 is-arrayish@^0.2.1:
   version "0.2.1"
@@ -3740,6 +3793,13 @@ merge-descriptors@1.0.1:
   resolved "https://registry.npmjs.org/merge-descriptors/-/merge-descriptors-1.0.1.tgz"
   integrity sha512-cCi6g3/Zr1iqQi6ySbseM1Xvooa98N0w31jzUYrXPX2xqObmFGHJ0tQ5u74H3mVh7wLouTseZyYIq39g8cNp1w==
 
+merge-options-default@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/merge-options-default/-/merge-options-default-1.0.2.tgz#cf9a8a6dca8af06e119a26ad09bb341fad9f447b"
+  integrity sha512-34dbkKCRDFIHJsV/ym4OfTylW5CQ23+wamcF9qUmNebFUklex9CGEwDrhsXrVFHVQe1KGcaX9QJMfs7fvIV9wA==
+  dependencies:
+    is-all-utils "^1.0.3"
+
 merge-stream@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/merge-stream/-/merge-stream-2.0.0.tgz"
@@ -3901,6 +3961,15 @@ neo-async@^2.6.2:
   version "2.6.2"
   resolved "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
+
+nestjs-sequelize-seeder@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/nestjs-sequelize-seeder/-/nestjs-sequelize-seeder-1.1.4.tgz#3e92fecc6d2b11f0169a27ab96760a1a6688167c"
+  integrity sha512-EstDY0lLjqROXE2E3ko5LxdZmxMW+sZ4V0Dlnleh5V6NdHprG54eP42IN+CKlJfkEFSRY8X1fOFYLSAlx2tXRg==
+  dependencies:
+    format-fast "^1.0.1"
+    is-all-utils "^1.0.3"
+    merge-options-default "^1.0.2"
 
 node-abort-controller@^3.0.1:
   version "3.1.1"
@@ -4237,6 +4306,11 @@ proxy-addr@^2.0.7, proxy-addr@~2.0.7:
   dependencies:
     forwarded "0.2.0"
     ipaddr.js "1.9.1"
+
+proxy-from-env@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/proxy-from-env/-/proxy-from-env-1.1.0.tgz#e102f16ca355424865755d2c9e8ea4f24d58c3e2"
+  integrity sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==
 
 pump@^3.0.0:
   version "3.0.0"
@@ -5116,10 +5190,15 @@ utils-merge@1.0.1:
   resolved "https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.1.tgz"
   integrity sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==
 
-uuid@^8.3.2:
+uuid@8.3.2, uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
+
+uuid@9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-9.0.0.tgz#592f550650024a38ceb0c562f2f6aa435761efb5"
+  integrity sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==
 
 v8-compile-cache-lib@^3.0.1:
   version "3.0.1"

@@ -17,6 +17,11 @@ export class Currencies extends Model {
   @Column({
     allowNull: false
   })
+  blockchain: string
+
+  @Column({
+    allowNull: false
+  })
   name: string
 
   @Column({

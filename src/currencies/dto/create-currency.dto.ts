@@ -3,6 +3,13 @@ import { IsEnum, IsNotEmpty, IsNumber } from 'class-validator'
 
 export class CreateCurrencyDto {
   @ApiProperty({
+    description: 'blockchain',
+    example: 'bitcoin'
+  })
+  @IsNotEmpty({ message: 'بلاکچین نباید خالی باشد' })
+  blockchain: string
+
+  @ApiProperty({
     description: 'name',
     example: 'bitcoin'
   })
