@@ -1,6 +1,18 @@
 version: '3.9'
 
 services:
+  postgres:
+    image: mysql:8.0
+    restart: always
+    environment:
+      - MYSQL_DATABASE=hdwallet
+      - MYSQL_ROOT_PASSWORD=kasra123
+    ports:
+      - '3306:3306'
+    volumes:
+      - /data/hdwallet:/data/hdwallet
+    networks:
+      - hdwallet_network
   app:
     build: .
     restart: always
@@ -8,6 +20,8 @@ services:
       - 8080:8080
     networks:
       - hdwallet_network
+    depends_on:
+      - mysql
 
 networks:
   hdwallet_network:

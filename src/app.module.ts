@@ -15,7 +15,7 @@ import { Currencies } from './currencies/entities/currencies.entity'
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: '',
+      password: 'kasra123',
       database: 'hdwallet',
       models: [Currencies]
     }),
