@@ -10,27 +10,27 @@ export class CurrenciesService {
     private currenciesRepository: typeof Currencies
   ) {}
 
-  create(createCurrencyDto: CreateCurrencyDto) {
+  async create(createCurrencyDto: CreateCurrencyDto) {
     const data: any = createCurrencyDto
-    return this.currenciesRepository.create(data)
+    return await this.currenciesRepository.create(data)
   }
 
-  findAll() {
-    return this.currenciesRepository.findAll()
+  async findAll() {
+    return await this.currenciesRepository.findAll()
   }
 
-  findOne(id: number) {
-    return this.currenciesRepository.findByPk(id)
+  async findOne(id: number) {
+    return await this.currenciesRepository.findByPk(id)
   }
 
-  update(id: number, updateCurrencyDto: UpdateCurrencyDto) {
-    return this.currenciesRepository.update(updateCurrencyDto, {
+  async update(id: number, updateCurrencyDto: UpdateCurrencyDto) {
+    return await this.currenciesRepository.update(updateCurrencyDto, {
       where: { id }
     })
   }
 
-  remove(id: number) {
-    return this.currenciesRepository.destroy({
+  async remove(id: number) {
+    return await this.currenciesRepository.destroy({
       where: { id }
     })
   }

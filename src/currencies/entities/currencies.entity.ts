@@ -56,9 +56,6 @@ export class Currencies extends Model {
   @Column
   icon: string
 
-  @Column
-  networkFee: number
-
   @Column({
     type: DataTypes.BOOLEAN,
     defaultValue: true,

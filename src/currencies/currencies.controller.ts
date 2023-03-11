@@ -18,30 +18,45 @@ export class CurrenciesController {
   constructor(private readonly currenciesService: CurrenciesService) {}
 
   @Post()
-  create(@Body() createCurrencyDto: CreateCurrencyDto) {
-    return this.currenciesService.create(createCurrencyDto)
+  async create(@Body() createCurrencyDto: CreateCurrencyDto) {
+    return {
+      statusCode: 201,
+      data: await this.currenciesService.create(createCurrencyDto)
+    }
   }
 
   @Get()
-  findAll() {
-    return this.currenciesService.findAll()
+  async findAll() {
+    return {
+      statusCode: 200,
+      data: await this.currenciesService.findAll()
+    }
   }
 
   @Get('id/:id')
-  findOne(@Param('id') id: string) {
-    return this.currenciesService.findOne(+id)
+  async findOne(@Param('id') id: string) {
+    return {
+      statusCode: 200,
+      data: await this.currenciesService.findOne(+id)
+    }
   }
 
   @Patch('id/:id')
-  update(
+  async update(
     @Param('id') id: string,
     @Body() updateCurrencyDto: UpdateCurrencyDto
   ) {
-    return this.currenciesService.update(+id, updateCurrencyDto)
+    return {
+      statusCode: 200,
+      data: await this.currenciesService.update(+id, updateCurrencyDto)
+    }
   }
 
   @Delete('id/:id')
-  remove(@Param('id') id: string) {
-    return this.currenciesService.remove(+id)
+  async remove(@Param('id') id: string) {
+    return {
+      statusCode: 200,
+      data: await this.currenciesService.remove(+id)
+    }
   }
 }
