@@ -6,6 +6,7 @@ import {
   TransferDto
 } from './dto/wallet.dto'
 import { ApiParam, ApiTags } from '@nestjs/swagger'
+import { HttpCode } from '@nestjs/common'
 
 @ApiTags('Wallet')
 @Controller('wallet')
@@ -13,11 +14,16 @@ export class WalletController {
   constructor(private readonly walletService: WalletService) {}
 
   @Get('mnemonic/generate')
+  @HttpCode(200)
   public async generateMnemonic() {
-    return await this.walletService.generateMnemonic()
+    return {
+      statusCode: 200,
+      data: await this.walletService.generateMnemonic()
+    }
   }
 
   @Post('/addresses/generate')
+  @HttpCode(200)
   public async generateAddresses(
     @Body() generateAddressDto: GenerateAddressDto
   ) {
@@ -28,6 +34,7 @@ export class WalletController {
   }
 
   @Post('id/:id/address/generate')
+  @HttpCode(200)
   @ApiParam({
     name: 'id',
     type: 'string',
@@ -38,10 +45,14 @@ export class WalletController {
     @Param('id') id: string,
     @Body() generateAddressDto: GenerateAddressDto
   ) {
-    return await this.walletService.generateAddress(id, generateAddressDto)
+    return {
+      statusCode: 200,
+      data: await this.walletService.generateAddress(id, generateAddressDto)
+    }
   }
 
   @Post('id/:id/address/restore')
+  @HttpCode(200)
   @ApiParam({
     name: 'id',
     type: 'string',
@@ -52,10 +63,13 @@ export class WalletController {
     @Param('id') id: string,
     @Body() restoreAddressFromPrivateKeyDto: RestoreAddressFromPrivateKeyDto
   ) {
-    return await this.walletService.restoreAddressFromPrivateKey(
-      id,
-      restoreAddressFromPrivateKeyDto
-    )
+    return {
+      statusCode: 200,
+      data: await this.walletService.restoreAddressFromPrivateKey(
+        id,
+        restoreAddressFromPrivateKeyDto
+      )
+    }
   }
 
   @Get('id/:id/address/:address/balance')
@@ -75,7 +89,10 @@ export class WalletController {
     @Param('id') id: string,
     @Param('address') address: string
   ) {
-    return await this.walletService.balance(id, address)
+    return {
+      statusCode: 200,
+      data: await this.walletService.balance(id, address)
+    }
   }
 
   @Get('id/:id/address/:address/transactions')
@@ -95,10 +112,13 @@ export class WalletController {
     @Param('id') id: string,
     @Param('address') address: string
   ) {
-    return await this.walletService.transactions(id, address)
+    return {
+      statusCode: 200,
+      data: await this.walletService.transactions(id, address)
+    }
   }
-
   @Post('id/:id/address/transfer')
+  @HttpCode(200)
   @ApiParam({
     name: 'id',
     type: 'string',
@@ -109,7 +129,10 @@ export class WalletController {
     @Param('id') id: string,
     @Body() transferDto: TransferDto
   ) {
-    return await this.walletService.transfer(id, transferDto)
+    return {
+      statusCode: 200,
+      data: await this.walletService.transfer(id, transferDto)
+    }
   }
 
   @Get('id/:id/transaction/:transaction')
@@ -130,6 +153,9 @@ export class WalletController {
     @Param('id') id: string,
     @Param('transaction') transaction: string
   ) {
-    return await this.walletService.transaction(id, transaction)
+    return {
+      statusCode: 200,
+      data: await this.walletService.transaction(id, transaction)
+    }
   }
 }

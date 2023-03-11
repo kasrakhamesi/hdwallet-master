@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common'
 
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'welcome to hd-wallet api'
+  index(): object {
+    return { message: 'Welcome To HD-Wallet Service', version: 1 }
   }
 }

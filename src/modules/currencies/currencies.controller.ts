@@ -4,6 +4,7 @@ import {
   Post,
   Body,
   Patch,
+  Put,
   Param,
   Delete
 } from '@nestjs/common'
@@ -41,7 +42,7 @@ export class CurrenciesController {
     }
   }
 
-  @Patch('id/:id')
+  @Put('id/:id')
   async update(
     @Param('id') id: string,
     @Body() updateCurrencyDto: UpdateCurrencyDto

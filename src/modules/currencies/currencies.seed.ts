@@ -1,5 +1,5 @@
 import { Seeder, OnSeederInit } from 'nestjs-sequelize-seeder'
-import { Currencies } from '@src/currencies/entities/currencies.entity'
+import { Currencies } from './entities/currencies.entity'
 
 @Seeder({
   model: 'currencies'

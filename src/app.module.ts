@@ -1,21 +1,21 @@
 import { Module } from '@nestjs/common'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
-import { CurrenciesModule } from './currencies/currencies.module'
-import { WalletModule } from './wallet/wallet.module'
+import { WalletModule } from '@modules/wallet/wallet.module'
 import { ConfigModule } from '@nestjs/config'
 import { SeederModule } from 'nestjs-sequelize-seeder'
 import { SequelizeModule } from '@nestjs/sequelize'
-import { Currencies } from './currencies/entities/currencies.entity'
+import { Currencies } from '@modules/currencies/entities/currencies.entity'
+import { CurrenciesModule } from '@modules/currencies/currencies.module'
 
 @Module({
   imports: [
     SequelizeModule.forRoot({
       dialect: 'mysql',
-      host: 'mysql',
+      host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'kasra123',
+      password: '',
       database: 'hdwallet',
       models: [Currencies]
     }),
