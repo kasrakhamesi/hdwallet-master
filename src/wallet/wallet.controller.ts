@@ -83,7 +83,7 @@ export class WalletController {
     name: 'address',
     type: 'string',
     required: true,
-    example: '0x8044ed1A4Cc16B116C01cc2c3076263B97DFf1F5'
+    example: '0x154421b5abfd5fc12b16715e91d564aa47c8ddee'
   })
   @ApiParam({
     name: 'id',

@@ -12,7 +12,7 @@ import { Currencies } from './currencies/entities/currencies.entity'
   imports: [
     SequelizeModule.forRoot({
       dialect: 'mysql',
-      host: 'localhost',
+      host: 'mysql',
       port: 3306,
       username: 'root',
       password: 'kasra123',

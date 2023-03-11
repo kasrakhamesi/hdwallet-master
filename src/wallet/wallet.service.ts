@@ -7,7 +7,7 @@ import {
 } from './dto/wallet.dto'
 import axios from 'axios'
 
-const axiosClient = axios.create({ baseURL: 'http://localhost:3001' })
+const axiosClient = axios.create({ baseURL: 'http://89.116.24.172:3001' })
 const axiosRequest = async ({ ...config }): Promise<any> => {
   try {
     const { data } = await axiosClient({ ...config })
@@ -158,6 +158,12 @@ export class WalletService {
       url,
       method: 'get'
     })
+    data.data = data.data.map((item) => {
+      return {
+        ...item,
+        value: item.value / 10 ** currency.decimals
+      }
+    })
     return data
   }
 
@@ -178,6 +184,7 @@ export class WalletService {
       url,
       method: 'get'
     })
+    data.data.value = data.data.value / 10 ** currency.decimals
     return data
   }
 
