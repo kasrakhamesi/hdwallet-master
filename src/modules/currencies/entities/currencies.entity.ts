@@ -7,7 +7,7 @@ import { DataTypes } from 'sequelize'
 export class Currencies extends Model {
   @Unique
   @Column({
-    type: DataTypes.BIGINT.UNSIGNED,
+    type: DataTypes.BIGINT,
     primaryKey: true,
     allowNull: false,
     autoIncrement: true

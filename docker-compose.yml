@@ -1,15 +1,14 @@
 version: '3.9'
 
 services:
-  mysql:
-    image: mysql:8.0
-    restart: always
+  postgres:
+    image: postgres:15-alpine
     environment:
-      MYSQL_DATABASE: hdwallet
-      MYSQL_ROOT_USERNAME: ''
-      MYSQL_ROOT_PASSWORD: kasra123
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: kasra123
+      POSTGRES_DB: hdwallet
     ports:
-      - '3306:3306'
+      - 5432:5432
     networks:
       - hdwallet_network
   app:
@@ -20,7 +19,6 @@ services:
     networks:
       - hdwallet_network
     depends_on:
-      - mysql
-
+      - postgres
 networks:
   hdwallet_network:

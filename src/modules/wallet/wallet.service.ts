@@ -111,7 +111,7 @@ export class WalletService {
         HttpStatus.BAD_REQUEST
       )
 
-    return await this.ethereumService.balance({
+    return await this[`${currency.blockchain}Service`].balance({
       address,
       contract: currency.contractAddress
     })
@@ -183,7 +183,7 @@ export class WalletService {
       )
 
     transferDto.value = transferDto.value * 10 ** currency.decimals
-    return await this.ethereumService.transfer({
+    return await this[`${currency.blockchain}Service`].transfer({
       fromPrivateKey: transferDto.fromPrivateKey,
       toAddress: transferDto.toAddress,
       value: transferDto.value,
